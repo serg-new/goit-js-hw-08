@@ -17,9 +17,9 @@ getItems();
 function onFormSubmit(el) {
   el.preventDefault();
 
-  if (refs.inputEmail.value !== ''
-    && refs.inputText.value !== '') {
-    e.currentTarget.reset();
+  if (refs.inputEmail.value !== null
+    && refs.inputText.value !== null) {
+    el.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
     console.log(formData);
     return;
@@ -40,8 +40,10 @@ function getItems() {
       refs.inputEmail.value = saveItems.email;
       refs.inputText.value = saveItems.message;
     }
-  } catch (e) {
-    console.log(e.name); // "SyntaxError"
+  } catch (el) {
+    console.log(el.name); 
   }
-}
+};
+
+
 
